@@ -14,44 +14,11 @@ document.querySelectorAll(".navList").forEach((n) =>
   })
 );
 
-// btn
-const btn__counts = document.getElementsByClassName("btn__count");
-const faqPanes = document.getElementsByClassName("faq__pane");
-
-const countText = [
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse voluptatum eius, odit nihil porro animi pariatur voluptate, distinctio veniam quia, amet molestias commodi id omnis explicabo! Expedita rem corporis in.",
-    showing: false,
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse voluptatum eius, odit nihil porro animi pariatur voluptate, distinctio veniam quia, amet molestias commodi id omnis explicabo! Expedita rem corporis in.",
-    showing: false,
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse voluptatum eius, odit nihil porro animi pariatur voluptate, distinctio veniam quia, amet molestias commodi id omnis explicabo! Expedita rem corporis in.",
-    showing: false,
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse voluptatum eius, odit nihil porro animi pariatur voluptate, distinctio veniam quia, amet molestias commodi id omnis explicabo! Expedita rem corporis in.",
-    showing: false,
-  },
-  {
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse voluptatum eius, odit nihil porro animi pariatur voluptate, distinctio veniam quia, amet molestias commodi id omnis explicabo! Expedita rem corporis in.",
-    showing: false,
-  },
-];
-const paragraph = document.createElement("p");
-for (let index = 0; index < btn__counts.length; index++) {
-  btn__counts[index].addEventListener("click", () => {
-    if (countText[index].showing) {
-      faqPanes[index].removeChild(paragraph);
-      countText[index].showing = false;
-    } else {
-      paragraph.innerHTML = countText[index].text;
-
-      faqPanes[index].appendChild(paragraph);
-      countText[index].showing = true;
-    }
+// FAQ
+const accordion = document.getElementsByClassName("contentBx");
+for (i = 0; i < accordion.length; i++) {
+  accordion[i].addEventListener("click", function () {
+    this.classList.toggle("active");
   });
 }
 
